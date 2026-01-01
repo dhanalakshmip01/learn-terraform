@@ -185,23 +185,4 @@ By the end of this course, students will be able to:
 * Manage multiple environments and remote state.
 * Deploy production-ready infrastructure safely.
 
----
 
-⭐ **Happy Terraforming!**
-
----
-
-### What's Next?
-
-If you want to see more:
-
-* 📁 **Exact repo folder structure**
-* 🧪 **Day-wise labs**
-* 🎓 **Interview questions**
-* 🏆 **Real production Terraform examples**
-
-**Just say the word!** 👌
-
----
-
-**Would you like me to generate the "Exact repo folder structure" to go along with this plan?**
