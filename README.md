@@ -1,8 +1,4 @@
-# 🚀 Learn Terraform
-
-*A Complete 8-Day Hands-on Terraform Course*
-
-This repository contains a **step-by-step Terraform training program** designed to take students from **absolute beginner** to **production-ready Terraform engineer**. The course focuses on **real-world AWS use cases**, **best practices**, and **industry-standard workflows**.
+# 🚀 Learn Terraform.
 
 ---
 
