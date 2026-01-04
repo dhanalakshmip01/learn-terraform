@@ -32,9 +32,9 @@ By the end of this course, you will be able to:
 ## ⏱️ Course Format
 
 - **Duration:** 14 Days  
-- **Class time:** ~1.5 hours per day  
+- **Class time:** **~1.5 hours per day**
 - **Audience:** Beginners (cloud basics already completed)  
-- **Approach:** Concept → Explanation → Real-world relevance  
+- **Approach:** Concept → Hands-on → Real-world relevance  
 
 ---
 
@@ -49,10 +49,17 @@ By the end of this course, you will be able to:
 - Problems with manual infrastructure
 - Declarative vs Imperative approach
 - What Terraform is (and what it is NOT)
-- Terraform vs Ansible vs CloudFormation (high-level comparison)
+- Terraform vs Ansible vs CloudFormation (high-level)
+- Terraform alternatives (CloudFormation, ARM/Bicep, Pulumi)
+
+### Hands-On
+- Install Terraform on Windows / Linux / Mac
+- Verify installation using `terraform version`
+- Understand Terraform binary and PATH
+- Run first basic Terraform command
 
 ### Outcome
-You understand **why Terraform is needed** and where it fits in DevOps.
+You understand **why Terraform is needed and how to install it**.
 
 ---
 
@@ -64,10 +71,16 @@ You understand **why Terraform is needed** and where it fits in DevOps.
 - Resources and how infrastructure is defined
 - Terraform State (introduction)
 - Terraform workflow:
-  - `terraform init`
-  - `terraform plan`
-  - `terraform apply`
-  - `terraform destroy`
+  - `init`
+  - `plan`
+  - `apply`
+  - `destroy`
+
+### Hands-On
+- Create first `main.tf`
+- Initialize Terraform (`terraform init`)
+- Run `terraform plan` and `terraform apply`
+- Destroy resources safely
 
 ### Outcome
 You understand **how Terraform works internally**.
@@ -83,6 +96,11 @@ You understand **how Terraform works internally**.
 - Resource references (`resource.attribute`)
 - File structure and naming best practices
 
+### Hands-On
+- Write clean Terraform configuration
+- Reference resource attributes
+- Use `terraform console`
+
 ### Outcome
 You can **read and write Terraform code confidently**.
 
@@ -92,17 +110,16 @@ You can **read and write Terraform code confidently**.
 
 ### You Will Learn
 - Input variables
-- Variable types:
-  - string
-  - number
-  - bool
-  - list
-  - map
-  - object
+- Variable types (string, number, bool, list, map, object)
 - Default values
 - `terraform.tfvars`
 - Variable precedence
 - Local values (`locals`)
+
+### Hands-On
+- Convert hardcoded values into variables
+- Use `.tfvars` files
+- Use `locals` for reuse
 
 ### Outcome
 You can **parameterize infrastructure properly**.
@@ -116,10 +133,14 @@ You can **parameterize infrastructure properly**.
 - Why outputs are important
 - Terraform dependency graph
 - Implicit dependencies
-- How Terraform decides execution order
+- Execution order
+
+### Hands-On
+- Create output values
+- Observe dependency resolution using `terraform plan`
 
 ### Outcome
-You understand **resource relationships and execution flow**.
+You understand **resource relationships and flow**.
 
 ---
 
@@ -131,10 +152,14 @@ You understand **resource relationships and execution flow**.
   - `count`
   - `for_each`
 - Difference between `count` and `for_each`
-- When to use which approach
+
+### Hands-On
+- Create multiple resources using `count`
+- Repeat using `for_each`
+- Compare behaviors
 
 ### Outcome
-You can **create and manage multiple resources dynamically**.
+You can **scale resources dynamically**.
 
 ---
 
@@ -142,28 +167,33 @@ You can **create and manage multiple resources dynamically**.
 
 ### You Will Learn
 - `depends_on`
-- `lifecycle` block:
-  - `create_before_destroy`
-  - `prevent_destroy`
-  - `ignore_changes`
+- `lifecycle` block
 - Resource replacement behavior
 
+### Hands-On
+- Add explicit dependencies
+- Prevent accidental resource deletion
+- Control recreation using lifecycle rules
+
 ### Outcome
-You can **control safe infrastructure changes**.
+You can **manage safe infrastructure changes**.
 
 ---
 
 ## 📅 Day 8 – Terraform State (Core Concepts)
 
 ### You Will Learn
-- What Terraform state really is
+- What Terraform state is
 - Why state is critical
-- What is stored inside `terraform.tfstate`
 - State drift
 - Risks of local state
 
+### Hands-On
+- Inspect `terraform.tfstate`
+- Understand state vs real resources
+
 ### Outcome
-You understand **Terraform’s most important concept: state**.
+You understand **Terraform’s most critical concept**.
 
 ---
 
@@ -171,10 +201,13 @@ You understand **Terraform’s most important concept: state**.
 
 ### You Will Learn
 - Local vs remote state
-- Benefits of remote backend
-- Backend configuration (conceptual)
+- Remote backend benefits
 - State locking
-- Problems with concurrent Terraform runs
+- Concurrent runs problem
+
+### Hands-On
+- Configure remote backend (conceptual or real)
+- Observe state locking behavior
 
 ### Outcome
 You understand **team-safe Terraform usage**.
@@ -184,13 +217,13 @@ You understand **team-safe Terraform usage**.
 ## 📅 Day 10 – Advanced State Management & Import
 
 ### You Will Learn
-- Terraform state commands:
-  - `terraform state list`
-  - `terraform state show`
-  - `terraform state rm`
-  - `terraform state mv`
+- `terraform state` commands
 - `terraform import`
-- Managing existing infrastructure with Terraform
+- Managing existing infrastructure
+
+### Hands-On
+- Use `state list` and `state show`
+- Import an existing resource into Terraform
 
 ### Outcome
 You can **handle real-world Terraform scenarios**.
@@ -200,30 +233,35 @@ You can **handle real-world Terraform scenarios**.
 ## 📅 Day 11 – Terraform Modules (Core Concepts)
 
 ### You Will Learn
-- What modules are and why they matter
-- Root module vs child module
-- Module inputs and outputs
-- Module folder structure
-- Reusability principles
+- What modules are
+- Root vs child modules
+- Inputs and outputs
+- Folder structure
+
+### Hands-On
+- Create a reusable module
+- Call module from root configuration
 
 ### Outcome
-You can **design reusable and scalable Terraform code**.
+You can **write reusable Terraform code**.
 
 ---
 
 ## 📅 Day 12 – Environments, Security & Best Practices
 
 ### You Will Learn
-- Managing multiple environments (dev / prod)
-- Folder-based environment structure (industry standard)
-- Environment-specific `tfvars`
-- Why Terraform workspaces are limited
-- Security best practices:
-  - IAM least privilege
-  - Sensitive variables
-  - Avoiding hardcoded secrets
-- Common Terraform anti-patterns
-- Provisioners (awareness only – why they are discouraged)
+- Managing multiple environments
+- Folder-based env structure
+- Environment-specific tfvars
+- Terraform workspaces (limitations)
+- Security best practices
+- Terraform anti-patterns
+- Provisioners (why to avoid)
+
+### Hands-On
+- Create dev/prod environments
+- Apply security best practices
+- Run `terraform fmt` and `terraform validate`
 
 ### Outcome
 You understand **production-grade Terraform practices**.
@@ -232,49 +270,39 @@ You understand **production-grade Terraform practices**.
 
 ## 🧱 Day 13 – Terraform Project (Full Session)
 
-### Project Goal
-Build a **complete Terraform infrastructure project**.
-
-### What You Will Do
-- Provision cloud infrastructure (VPC/VNet, subnet, VM)
-- Use variables and outputs
-- Organize code cleanly
-- Apply best practices learned in the course
-- Understand the project end-to-end
+### Hands-On Project
+- Build a complete Terraform infrastructure
+- Use variables, outputs, modules
+- Organize code professionally
+- Apply best practices
 
 ### Outcome
-You will have **one solid Terraform project** suitable for GitHub and interviews.
+You have **one complete Terraform project**.
 
 ---
 
 ## 🎤 Day 14 – Terraform Interview Questions (Full Session)
 
-### Coverage
-- Terraform fundamentals
-- Terraform workflow
-- Variables and outputs
-- State and backend concepts
-- Modules and environments
-- `count` vs `for_each`
-- Lifecycle and dependencies
-- Security best practices
-- Real-world scenario-based questions
-- Common mistakes and how to answer them
+### Hands-On (Interactive)
+- Answer interview questions live
+- Explain Terraform project end-to-end
+- Discuss real-world scenarios
+- Mock interview style discussion
 
 ### Outcome
-You will be **confidently interview-ready for Terraform**.
+You are **interview-ready for Terraform**.
 
 ---
 
 ## ⭐ Final Outcome of the Course
 
-After completing this 14-day course, you will be able to:
+After completing this course, you will be able to:
 
 - Design Terraform projects from scratch
-- Write clean and maintainable Terraform code
-- Work safely with Terraform state in teams
-- Manage multiple environments professionally
-- Explain Terraform concepts clearly in interviews
+- Write clean, maintainable Terraform code
+- Work safely with Terraform state
+- Manage multiple environments
+- Confidently face Terraform interviews
 - Showcase a real Terraform project
 
 ---
