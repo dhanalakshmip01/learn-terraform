@@ -1,6 +1,4 @@
-This is a polished, professional version of your Day 1 notes. I have improved the formatting for better readability, added visual cues, and organized the technical sections into a clean, "scannable" structure suitable for a GitHub repository or a student handbook.
 
----
 
 # 📅 Day 1: Terraform Foundations & Infrastructure as Code (IaC)
 
