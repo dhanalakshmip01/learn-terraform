@@ -92,8 +92,4 @@ When students run `terraform plan`, they need to "read" the symbols. This is a c
 * **`+/-` replace**: Terraform must **delete** the old resource and **create** a new one (happens if you change something unchangeable, like a VM's Availability Zone).
 * **`-` destroy**: The resource will be removed.
 
--f the Session
 
-Students should leave the room feeling that **Terraform is a cycle**. You write, you init, you plan, you apply. If they understand that "State" is what connects their code to the real world, they have mastered Day 2.
-
-**Would you like me to move on to Day 3 (HCL Basics: Variables, Outputs, and Data Types)?**
