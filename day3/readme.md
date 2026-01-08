@@ -105,6 +105,3 @@ terraform fmt: Automatically fixes indentation and alignment to match HashiCorp 
 
 terraform validate: Checks the configuration for internal consistency and syntax errors.
 
----
-
-**Next Task:** Would you like me to prepare a **"Lab Challenge"** where you have to split your current `main.tf` into the professional 4-file structure?
