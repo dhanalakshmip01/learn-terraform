@@ -138,6 +138,4 @@ The `terraform.tfstate` file is a JSON map of your infrastructure.
 * **`+/-` replace:** Terraform must **delete** and **re-create** the resource (e.g., changing a VM's subnet).
 * **`-` destroy:** The resource will be removed.
 
----
 
-**Next Step:** Would you like me to create a **"Day 2 Lab Challenge"** for your students to test their understanding of the workflow?
