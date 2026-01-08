@@ -78,7 +78,7 @@ You understand **why Terraform is needed and how to install it**.
 
 ## 📅 Day 3: Practical Deployment & Professional Structure
 
-**Goal:** Build real-world infrastructure, manage resource relationships, and organize code like a DevOps Pro.
+**Goal:** Build infrastructure, manage resource relationships, and organize code like a DevOps Pro.
 
 ### 📚 Learning Objectives:
 
