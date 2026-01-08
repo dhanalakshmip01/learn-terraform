@@ -61,48 +61,36 @@ By the end of this course, you will be able to:
 ### Outcome
 You understand **why Terraform is needed and how to install it**.
 
----
 
-## 📅 Day 2 – Terraform Architecture & Workflow
 
-### You Will Learn
-- Terraform CLI
-- Providers and how Terraform talks to cloud APIs
-- Resources and how infrastructure is defined
-- Terraform State (introduction)
-- Terraform workflow:
-  - `init`
-  - `plan`
-  - `apply`
-  - `destroy`
+## 📅 Day 2: The Terraform Core (Syntax, Logic & State)
 
-### Hands-On
-- Create first `main.tf`
-- Initialize Terraform (`terraform init`)
-- Run `terraform plan` and `terraform apply`
-- Destroy resources safely
+**Goal:** Understand how Terraform speaks, how it connects to the cloud, and how it remembers what it built.
 
-### Outcome
-You understand **how Terraform works internally**.
+### 📚 Learning Objectives:
+
+* **HCL Syntax Foundations:** Understanding Blocks vs. Arguments.
+* **Provider Ecosystem:** How Terraform interacts with Cloud APIs (AWS, Azure, GCP).
+* **Terraform State Deep-Dive:** Understanding the `.tfstate` file as the "Source of Truth."
+* **The 4-Step Core Workflow:** Mastering `init`, `plan`, `apply`, and `destroy`.
 
 ---
 
-## 📅 Day 3 – Terraform Language (HCL) Basics
+## 📅 Day 3: Practical Deployment & Professional Structure
 
-### You Will Learn
-- Terraform configuration language (HCL)
-- Blocks vs arguments
-- Resource syntax
-- Resource references (`resource.attribute`)
-- File structure and naming best practices
+**Goal:** Build real-world infrastructure, manage resource relationships, and organize code like a DevOps Pro.
 
-### Hands-On
-- Write clean Terraform configuration
-- Reference resource attributes
-- Use `terraform console`
+### 📚 Learning Objectives:
 
-### Outcome
-You can **read and write Terraform code confidently**.
+* **The "First Build" Demo:** Deploying a live EC2 Instance from scratch.
+* **Resource Interdependency:** Mastering **Resource References** (`type.name.attribute`) to link Security Groups and Instances.
+* **Internal Inspection:** Using `terraform console` to query live resource data and the State file.
+* **Production File Structure:** Breaking down a single `main.tf` into specialized files:
+* `provider.tf`
+* `main.tf`
+* `variables.tf`
+* `outputs.tf`
+
 
 ---
 
