@@ -103,6 +103,7 @@ You understand **why Terraform is needed and how to install it**.
 - `terraform.tfvars`
 - Variable precedence
 - Local values (`locals`)
+- tf fmt and tf validate
 
 ### Hands-On
 - Convert hardcoded values into variables
