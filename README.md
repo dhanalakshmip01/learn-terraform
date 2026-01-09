@@ -83,55 +83,57 @@ You understand **why Terraform is needed and how to install it**.
 ### 📚 Learning Objectives:
 
 * **The "First Build" Demo:** Deploying a live EC2 Instance from scratch.
-* **Resource Interdependency:** Mastering **Resource References** (`type.name.attribute`) to link Security Groups and Instances.
 * **Internal Inspection:** Using `terraform console` to query live resource data and the State file.
+* **Resource Interdependency:** Mastering **Resource References** (`type.name.attribute`) to link Security Groups and Instances.
+* - Terraform dependency graph, Implicit dependencies, Explicit dependencies, Execution order
 * **Production File Structure:** Breaking down a single `main.tf` into specialized files:
 * `provider.tf`
 * `main.tf`
 * `variables.tf`
 * `outputs.tf`
 
-
 ---
 
-## 📅 Day 4 – Variables in Terraform (Deep Dive)
+## 📅 Day 4 – Parameterization & Visibility (Variables + Outputs)
+
+Since Variables and Outputs are two sides of the same coin (Inputs vs. Results), combining them makes total sense.
 
 ### You Will Learn
-- Input variables
-- Variable types (string, number, bool, list, map, object)
-- Default values
-- `terraform.tfvars`
-- Variable precedence
-- Local values (`locals`)
-- tf fmt and tf validate
+
+* **Input Variables:** types (string, list, map, object), validation rules, and sensitive flags.
+* **Variable Precedence:** Which value wins? (CLI args vs. `.tfvars` vs. Env Vars).
+* **Output Values:** Extracting data (IPs, IDs, DNS names) for the user or other modules.
+* **Locals:** How to use `locals` as private, computed variables to keep code DRY.
+* **Code Quality:** Using `terraform fmt` and `terraform validate`.
 
 ### Hands-On
-- Convert hardcoded values into variables
-- Use `.tfvars` files
-- Use `locals` for reuse
 
-### Outcome
-You can **parameterize infrastructure properly**.
+* Convert a hardcoded VPC or VM configuration into a parameterized module.
+* Create a `terraform.tfvars` file to manage environment-specific settings.
+* Output the Public IP of a resource and use `terraform output` to view it.
 
 ---
 
-## 📅 Day 5 – Outputs & Terraform Dependency Graph
+## 📅 Day 5 – The Heart of Terraform: State Management
+
+Since you've already covered how resources relate to each other (dependencies), today should be about how Terraform *remembers* those resources.
 
 ### You Will Learn
-- What output values are
-- Why outputs are important
-- Terraform dependency graph
-- Implicit dependencies
-- Execution order
+
+* **The State File (`terraform.tfstate`):** What is it, and why you should never edit it manually?
+* **State Locking:** Preventing two people from breaking infrastructure at the same time.
+* **Remote State:** Moving the state file from your laptop to the cloud (S3/GCS/Azure Blob) for collaboration.
+* **State Commands:** `terraform state list`, `show`, and `rm`.
 
 ### Hands-On
-- Create output values
-- Observe dependency resolution using `terraform plan`
+
+* **Backend Configuration:** Move a local state file to a Remote Backend (e.g., S3 with DynamoDB for locking).
+* **State Inspection:** Use CLI commands to find a specific resource inside the state file without looking at the JSON.
+* **Refactoring:** Use `terraform state mv` to rename a resource without destroying it.
 
 ### Outcome
-You understand **resource relationships and flow**.
 
----
+You understand **how Terraform tracks real-world infrastructure** and how to **collaborate in a team**.
 
 ## 📅 Day 6 – Resources & Meta-Arguments
 
