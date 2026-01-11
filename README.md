@@ -134,40 +134,39 @@ Since you've already covered how resources relate to each other (dependencies), 
 ### Outcome
 
 You understand **how Terraform tracks real-world infrastructure** and how to **collaborate in a team**.
-
-## 📅 Day 6 – Resources & Meta-Arguments
-
-### You Will Learn
-- Resource lifecycle basics
-- Meta-arguments:
-  - `count`
-  - `for_each`
-- Difference between `count` and `for_each`
-
-### Hands-On
-- Create multiple resources using `count`
-- Repeat using `for_each`
-- Compare behaviors
-
-### Outcome
-You can **scale resources dynamically**.
+Here is a **slightly expanded but still high-level glimpse** you can use for **Day 6**:
 
 ---
 
-## 📅 Day 7 – Dependencies & Lifecycle Rules
+# 📅 Day 6 – Advanced Resource Logic (Meta-Arguments & Lifecycles)
 
-### You Will Learn
-- `depends_on`
-- `lifecycle` block
-- Resource replacement behavior
+Until now, we have been telling Terraform **what** to create.
+Today we learn **how Terraform should behave** when creating, updating, and deleting infrastructure.
 
-### Hands-On
-- Add explicit dependencies
-- Prevent accidental resource deletion
-- Control recreation using lifecycle rules
+On Day 6 we will cover:
 
-### Outcome
-You can **manage safe infrastructure changes**.
+### 🔹 **Meta-Arguments – Scaling Infrastructure**
+
+We will learn how to use:
+
+* **`count`** to create multiple identical resources from one block (like 10 web servers).
+* **`for_each`** to create multiple similar but distinct resources (like one server per application or one bucket per team).
+
+This helps us eliminate copy-paste and write **dynamic, scalable Terraform code**.
+
+---
+
+### 🔹 **Lifecycle Rules – Making Infrastructure Safe**
+
+We will learn how to control how Terraform treats important resources:
+
+* **`prevent_destroy`** to protect critical resources like databases.
+* **`create_before_destroy`** to avoid downtime during replacements.
+* **`ignore_changes`** to stop Terraform from fighting changes made by autoscaling or admins.
+
+These rules make Terraform **safe for production environments**.
+
+
 
 ---
 
