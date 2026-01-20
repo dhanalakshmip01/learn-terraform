@@ -184,7 +184,6 @@ So we use:
 
 ---
 
-# 🧠 Mental Model
 
 Think of it like this:
 
