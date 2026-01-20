@@ -168,8 +168,23 @@ These rules make Terraform **safe for production environments**.
 
 
 
----
 
+## 📅 Day 7 – Terraform Modules (Core Concepts)
+
+### You Will Learn
+- What modules are
+- Root vs child modules
+- Inputs and outputs
+- Folder structure
+
+### Hands-On
+- Create a reusable module
+- Call module from root configuration
+
+### Outcome
+You can **write reusable Terraform code**.
+
+---
 ## 📅 Day 8 – Terraform State (Core Concepts)
 
 ### You Will Learn
@@ -220,20 +235,6 @@ You can **handle real-world Terraform scenarios**.
 
 ---
 
-## 📅 Day 11 – Terraform Modules (Core Concepts)
-
-### You Will Learn
-- What modules are
-- Root vs child modules
-- Inputs and outputs
-- Folder structure
-
-### Hands-On
-- Create a reusable module
-- Call module from root configuration
-
-### Outcome
-You can **write reusable Terraform code**.
 
 ---
 
