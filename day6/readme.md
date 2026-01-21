@@ -199,7 +199,7 @@ Each entry in the variable becomes **one real resource**.
 
 ---
 
-# 🔹 Example 1: Simple for_each With Variable (Basic)
+# 🔹 Example 1: Simple for_each With Variable (set(string))
 
 ## 🎯 Goal
 
