@@ -271,9 +271,125 @@ Because we used a SET:
 
 For sets → key and value are same.
 
+
+# 🔹 Example 2: for_each With map(string) (Key → Value Mapping)
+
 ---
 
-# 🔹 Example 2: Production Pattern (Different Config Per Resource)
+## 🎯 Goal
+
+Create multiple **S3 buckets** where:
+
+* Bucket name comes from **map key**
+* Environment label comes from **map value**
+
+---
+
+## 🧠 Real World Use Case
+
+You want to create:
+
+| Bucket        | Environment |
+| ------------- | ----------- |
+| logs-bucket   | prod        |
+| backup-bucket | prod        |
+| media-bucket  | dev         |
+
+Instead of repeating code — use map(string).
+
+---
+
+# ✅ Step 1 — Define Variable (variables.tf)
+
+```hcl
+variable "buckets" {
+  description = "Map of bucket names and environment labels"
+  type        = map(string)
+}
+```
+
+---
+
+# ✅ Step 2 — Provide Values (terraform.tfvars)
+
+```hcl
+buckets = {
+
+  logs-bucket   = "prod"
+  backup-bucket = "prod"
+  media-bucket  = "dev"
+
+}
+```
+
+---
+
+# ✅ Step 3 — Use for_each (main.tf)
+
+```hcl
+resource "aws_s3_bucket" "this" {
+
+  for_each = var.buckets
+
+  bucket = each.key
+
+  tags = {
+    Environment = each.value
+    Name        = each.key
+    ManagedBy   = "Terraform"
+  }
+}
+```
+
+---
+
+# 🔍 What Terraform Creates
+
+Terraform expands internally into:
+
+```
+aws_s3_bucket.this["logs-bucket"]
+aws_s3_bucket.this["backup-bucket"]
+aws_s3_bucket.this["media-bucket"]
+```
+
+Each entry in the map becomes **one real AWS bucket**.
+
+---
+
+# 🧠 Understanding each.key vs each.value (map(string))
+
+From tfvars:
+
+```hcl
+logs-bucket = "prod"
+```
+
+Terraform sees:
+
+| Expression | Value       |
+| ---------- | ----------- |
+| each.key   | logs-bucket |
+| each.value | prod        |
+
+---
+
+# 🔥 Visual Flow (Very Important)
+
+```
+terraform.tfvars
+     ↓
+Map entries
+     ↓
+Terraform loop
+     ↓
+One resource per entry
+```
+
+
+---
+
+# 🔹 Example 3: Production Pattern (Different Config Per Resource)
 
 Now let’s build a **real-world setup**.
 
@@ -460,6 +576,32 @@ values(aws_instance.this)[*].id
 | No duplication    | One resource block              |
 | Safe deletion     | Only targeted resources removed |
 | Environment ready | Dev / QA / Prod separation      |
+
+# 🔹 Comparison of All 3 Patterns (Now You Fully Understand for_each)
+
+| Pattern Type | Best For               | each.key      | each.value  |
+| ------------ | ---------------------- | ------------- | ----------- |
+| set(string)  | Simple names           | Name          | Same as key |
+| map(string)  | Labels, tags, mappings | Name          | Value       |
+| map(object)  | Full infra config      | Resource name | Full object |
+
+---
+
+# 🧠 Production Tip
+
+Most companies use:
+
+* **map(object)** → compute/network resources
+* **map(string)** → tags, names, simple mappings
+* **set(string)** → small simple lists
+
+---
+
+# 🎯 One Line Summary
+
+> Every entry in a for_each variable becomes exactly one real Terraform-managed resource.
+
+---
 
 
 # 🔹 Part 2: Lifecycle Rules – Making Infrastructure Safe
