@@ -185,41 +185,8 @@ These rules make Terraform **safe for production environments**.
 You can **write reusable Terraform code**.
 
 ---
-## 📅 Day 8 – Terraform State (Core Concepts)
 
-### You Will Learn
-- What Terraform state is
-- Why state is critical
-- State drift
-- Risks of local state
-
-### Hands-On
-- Inspect `terraform.tfstate`
-- Understand state vs real resources
-
-### Outcome
-You understand **Terraform’s most critical concept**.
-
----
-
-## 📅 Day 9 – Remote Backend & State Locking
-
-### You Will Learn
-- Local vs remote state
-- Remote backend benefits
-- State locking
-- Concurrent runs problem
-
-### Hands-On
-- Configure remote backend (conceptual or real)
-- Observe state locking behavior
-
-### Outcome
-You understand **team-safe Terraform usage**.
-
----
-
-## 📅 Day 10 – Advanced State Management & Import
+## 📅 Day 8 – Advanced State Management & Import
 
 ### You Will Learn
 - `terraform state` commands
@@ -235,16 +202,13 @@ You can **handle real-world Terraform scenarios**.
 
 ---
 
-
----
-
-## 📅 Day 12 – Environments, Security & Best Practices
+## 📅 Day 9 – Environments, Security & Best Practices
 
 ### You Will Learn
 - Managing multiple environments
+- Terraform workspaces (limitations)
 - Folder-based env structure
 - Environment-specific tfvars
-- Terraform workspaces (limitations)
 - Security best practices
 - Terraform anti-patterns
 - Provisioners (why to avoid)
@@ -259,7 +223,7 @@ You understand **production-grade Terraform practices**.
 
 ---
 
-## 🧱 Day 13 – Terraform Project (Full Session)
+## 🧱 Day 10 – Terraform Project (Full Session)
 
 ### Hands-On Project
 - Build a complete Terraform infrastructure
@@ -272,7 +236,7 @@ You have **one complete Terraform project**.
 
 ---
 
-## 🎤 Day 14 – Terraform Interview Questions (Full Session)
+## 🎤 Day 11 – Terraform Interview Questions (Full Session)
 
 ### Hands-On (Interactive)
 - Answer interview questions live
