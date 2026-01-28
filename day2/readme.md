@@ -1,6 +1,6 @@
 # 🚀 Terraform Fundamentals - Day 2
 
-This module covers the core architecture, syntax, and lifecycle of Terraform. Understanding these concepts is essential before writing production-grade Infrastructure as Code (IaC).
+
 
 ## 📑 Topics Covered
 1. **HCL Basics:** Blocks, Arguments, and Resource Syntax.
