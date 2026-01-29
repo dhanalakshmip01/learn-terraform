@@ -123,7 +123,7 @@ Since you've already covered how resources relate to each other (dependencies), 
 * **The State File (`terraform.tfstate`):** What is it, and why you should never edit it manually?
 * **State Locking:** Preventing two people from breaking infrastructure at the same time.
 * **Remote State:** Moving the state file from your laptop to the cloud (S3/GCS/Azure Blob) for collaboration.
-* **State Commands:** `terraform state list`, `show`, and `rm`.
+* **State Commands:** `terraform state list`, `show`, and `rm`, state import commands
 
 ### Hands-On
 
@@ -186,23 +186,7 @@ You can **write reusable Terraform code**.
 
 ---
 
-## 📅 Day 8 – Advanced State Management & Import
-
-### You Will Learn
-- `terraform state` commands
-- `terraform import`
-- Managing existing infrastructure
-
-### Hands-On
-- Use `state list` and `state show`
-- Import an existing resource into Terraform
-
-### Outcome
-You can **handle real-world Terraform scenarios**.
-
----
-
-## 📅 Day 9 – Environments, Security & Best Practices
+## 📅 Day 8 – Environments, Security & Best Practices
 
 ### You Will Learn
 - Managing multiple environments
@@ -223,7 +207,7 @@ You understand **production-grade Terraform practices**.
 
 ---
 
-## 🧱 Day 10 – Terraform Project (Full Session)
+## 🧱 Day 9 – Terraform Project (Full Session)
 
 ### Hands-On Project
 - Build a complete Terraform infrastructure
@@ -236,7 +220,7 @@ You have **one complete Terraform project**.
 
 ---
 
-## 🎤 Day 11 – Terraform Interview Questions (Full Session)
+## 🎤 Day 10 – Terraform Interview Questions (Full Session)
 
 ### Hands-On (Interactive)
 - Answer interview questions live
